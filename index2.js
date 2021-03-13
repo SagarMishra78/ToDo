@@ -1,7 +1,7 @@
 function getAndUpdate() {
     console.log("Updating List...");
     tit = document.getElementById("title").value;
-    desc = document.getElementById("desc").value;
+    desc = document.getElementById("description").value;
     if (localStorage.getItem('itemsJson') == null) {
         itemJsonArray = [];
         itemJsonArray.push([tit, desc]);
@@ -13,6 +13,8 @@ function getAndUpdate() {
         itemJsonArray.push([tit, desc]);
         localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
     }
+    title.value = "";
+    description.value = "";
     update();
 }
 
